@@ -1,0 +1,15 @@
+name: Test Studio Agent
+on:
+  pull_request:
+    types: [opened, synchronize]
+
+jobs:
+  ai-review:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Appel de l'Agent Studio
+        uses: VOTRE_NOM_GITHUB/ai-studio-core@main # Remplacez par votre chemin
+        with:
+          openai_api_key: ${{ secrets.OPENAI_API_KEY }}
