@@ -15,4 +15,4 @@ jobs:
           api_key: ${{ secrets.AZURE_API_KEY }}
           api_base: "https://mon-studio-ai.openai.azure.com/"
           agent_type: "reviewer"
-          model_name: "gpt4o"
+          model_name: "azure/gpt4o"
