@@ -9,9 +9,20 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Appel de l'Agent Studio
+      - name: Code Review
         uses: nadescheemaeker/ai-core@main
         with:
-          api_key: ${{ secrets.GOOGLE_API_KEY }}
+          api_key: ${{ secrets.AZURE_API_KEY }}
+          api_base: ${{ secrets.AZURE_API_BASE }}
+          api_version: ${{ secrets.AZURE_API_VERSION }}
           agent_type: "reviewer"
-          model_name: "gemini/gemini-1.5-pro"
+          model_name: "azure/gpt4o"
+
+      - name: Security Analysis
+        uses: nadescheemaeker/ai-core@main
+        with:
+          api_key: ${{ secrets.AZURE_API_KEY }}
+          api_base: ${{ secrets.AZURE_API_BASE }}
+          api_version: ${{ secrets.AZURE_API_VERSION }}
+          agent_type: "security"
+          model_name: "azure/gpt4o"
