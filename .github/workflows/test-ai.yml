@@ -9,10 +9,18 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Appel de l'Agent Studio
+      - name: Code Review
         uses: nadescheemaeker/ai-core@main
         with:
           api_key: ${{ secrets.AZURE_API_KEY }}
           api_base: "https://mon-studio-ai.openai.azure.com/"
           agent_type: "reviewer"
+          model_name: "azure/gpt4o"
+
+      - name: Security Analysis
+        uses: nadescheemaeker/ai-core@main
+        with:
+          api_key: ${{ secrets.AZURE_API_KEY }}
+          api_base: "https://mon-studio-ai.openai.azure.com/"
+          agent_type: "security"
           model_name: "azure/gpt4o"
