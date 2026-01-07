@@ -12,6 +12,6 @@ jobs:
       - name: Appel de l'Agent Studio
         uses: nadescheemaeker/ai-core@main
         with:
-          api_key: ${{ secrets.GOOGLE_API_KEY }}
+          api_key: ${{ secrets.OPENAI_API_KEY }}
           agent_type: "reviewer"
-          model_name: "gemini/gemini-1.5-pro-latest"
+          model_name: "gpt-4o"
