@@ -12,6 +12,7 @@ jobs:
       - name: Appel de l'Agent Studio
         uses: nadescheemaeker/ai-core@main
         with:
-          api_key: ${{ secrets.OPENAI_API_KEY }}
+          api_key: ${{ secrets.AZURE_API_KEY }}
+          api_base: "https://mon-studio-ai.openai.azure.com/"
           agent_type: "reviewer"
-          model_name: "gpt-4o"
+          model_name: "gpt4o"
