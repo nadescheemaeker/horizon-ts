@@ -13,7 +13,8 @@ jobs:
         uses: nadescheemaeker/ai-core@main
         with:
           api_key: ${{ secrets.AZURE_API_KEY }}
-          api_base: "https://mon-studio-ai.openai.azure.com/"
+          api_base: ${{ secrets.AZURE_API_BASE }}
+          api_version: ${{ secrets.AZURE_API_VERSION }}
           agent_type: "reviewer"
           model_name: "azure/gpt4o"
 
